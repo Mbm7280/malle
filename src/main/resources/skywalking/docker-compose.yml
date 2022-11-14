@@ -1,0 +1,11 @@
+FROM openjdk:8-alpine3.9
+  # 作者信息
+MAINTAINER echo Docker skywalking "mbm1216@163.com"
+  #修改镜像为东八区时间
+COPY agent/ /opt/skyagent/ 
+COPY emall.jar /app.jar
+
+EXPOSE 9988
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+ENTRYPOINT ["java","-Xmx512m","-javaagent:/opt/skyagent/skywalking-agent.jar","- Dskywalking.agent.service_name=emall","- Dskywalking.collector.backend_service=124.221.195.70:11800","-jar","/app.jar"]
