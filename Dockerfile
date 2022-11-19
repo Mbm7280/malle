@@ -8,4 +8,4 @@ COPY malle.jar /app.jar
 EXPOSE 8001
 ENTRYPOINT ["java","-jar","/app.jar"]
 
-ENTRYPOINT ["java","-Xmx512m","-javaagent:/opt/skyagent/skywalking-agent.jar","-Dskywalking.agent.service_name=malle","-Dskywalking.collector.backend_service=172.16.128.130:11800","-jar","/app.jar"]
+ENTRYPOINT ["java","-Xmx512m","-javaagent:/opt/skyagent/skywalking-agent.jar","-Dskywalking.agent.service_name=malle","-Dskywalking.collector.backend_service=172.16.128.129:11800","-jar","/app.jar"]
