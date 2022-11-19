@@ -34,6 +34,11 @@ redis:
     resourceList: 'ums:resourceList'
   expire:
     common: 86400 # 24小时
+logstash:
+  host: 172.16.128.132 # ELK所在服务的IP
+logging:
+  level:
+    root: debug
 
 secure:
   ignored:
