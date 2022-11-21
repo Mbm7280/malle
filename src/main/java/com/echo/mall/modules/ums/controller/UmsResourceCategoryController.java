@@ -1,6 +1,6 @@
 package com.echo.mall.modules.ums.controller;
 
-import com.echo.mall.common.api.CommonResult;
+import com.echo.mall.common.api.ResultApi;
 import com.echo.mall.modules.ums.model.UmsResourceCategory;
 import com.echo.mall.modules.ums.service.UmsResourceCategoryService;
 import io.swagger.annotations.Api;
@@ -24,46 +24,46 @@ public class UmsResourceCategoryController {
     @ApiOperation("查询所有后台资源分类")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<List<UmsResourceCategory>> listAll() {
+    public ResultApi<List<UmsResourceCategory>> listAll() {
         List<UmsResourceCategory> resourceList = resourceCategoryService.listAll();
-        return CommonResult.success(resourceList);
+        return ResultApi.success(resourceList);
     }
 
     @ApiOperation("添加后台资源分类")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult create(@RequestBody UmsResourceCategory umsResourceCategory) {
+    public ResultApi create(@RequestBody UmsResourceCategory umsResourceCategory) {
         boolean success = resourceCategoryService.create(umsResourceCategory);
         if (success) {
-            return CommonResult.success(null);
+            return ResultApi.success(null);
         } else {
-            return CommonResult.failed();
+            return ResultApi.failed();
         }
     }
 
     @ApiOperation("修改后台资源分类")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult update(@PathVariable Long id,
+    public ResultApi update(@PathVariable Long id,
                                @RequestBody UmsResourceCategory umsResourceCategory) {
         umsResourceCategory.setId(id);
         boolean success = resourceCategoryService.updateById(umsResourceCategory);
         if (success) {
-            return CommonResult.success(null);
+            return ResultApi.success(null);
         } else {
-            return CommonResult.failed();
+            return ResultApi.failed();
         }
     }
 
     @ApiOperation("根据ID删除后台资源")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult delete(@PathVariable Long id) {
+    public ResultApi delete(@PathVariable Long id) {
         boolean success = resourceCategoryService.removeById(id);
         if (success) {
-            return CommonResult.success(null);
+            return ResultApi.success(null);
         } else {
-            return CommonResult.failed();
+            return ResultApi.failed();
         }
     }
 }

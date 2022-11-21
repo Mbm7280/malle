@@ -1,7 +1,7 @@
 package com.echo.mall.security.component;
 
 import cn.hutool.json.JSONUtil;
-import com.echo.mall.common.api.CommonResult;
+import com.echo.mall.common.api.ResultApi;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
@@ -20,7 +20,7 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
         response.setHeader("Cache-Control","no-cache");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        response.getWriter().println(JSONUtil.parse(CommonResult.unauthorized(authException.getMessage())));
+        response.getWriter().println(JSONUtil.parse(ResultApi.unauthorized(authException.getMessage())));
         response.getWriter().flush();
     }
 }

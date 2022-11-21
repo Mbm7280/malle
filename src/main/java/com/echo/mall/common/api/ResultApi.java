@@ -4,15 +4,15 @@ package com.echo.mall.common.api;
  * 通用返回对象
  * Created by macro on 2019/4/19.
  */
-public class CommonResult<T> {
+public class ResultApi<T> {
     private long code;
     private String message;
     private T data;
 
-    protected CommonResult() {
+    protected ResultApi() {
     }
 
-    protected CommonResult(long code, String message, T data) {
+    protected ResultApi(long code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
@@ -23,8 +23,8 @@ public class CommonResult<T> {
      *
      * @param data 获取的数据
      */
-    public static <T> CommonResult<T> success(T data) {
-        return new CommonResult<T>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
+    public static <T> ResultApi<T> success(T data) {
+        return new ResultApi<T>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
     }
 
     /**
@@ -33,16 +33,16 @@ public class CommonResult<T> {
      * @param data 获取的数据
      * @param  message 提示信息
      */
-    public static <T> CommonResult<T> success(T data, String message) {
-        return new CommonResult<T>(ResultCode.SUCCESS.getCode(), message, data);
+    public static <T> ResultApi<T> success(T data, String message) {
+        return new ResultApi<T>(ResultCode.SUCCESS.getCode(), message, data);
     }
 
     /**
      * 失败返回结果
      * @param errorCode 错误码
      */
-    public static <T> CommonResult<T> failed(IErrorCode errorCode) {
-        return new CommonResult<T>(errorCode.getCode(), errorCode.getMessage(), null);
+    public static <T> ResultApi<T> failed(IErrorCode errorCode) {
+        return new ResultApi<T>(errorCode.getCode(), errorCode.getMessage(), null);
     }
 
     /**
@@ -50,29 +50,29 @@ public class CommonResult<T> {
      * @param errorCode 错误码
      * @param message 错误信息
      */
-    public static <T> CommonResult<T> failed(IErrorCode errorCode,String message) {
-        return new CommonResult<T>(errorCode.getCode(), message, null);
+    public static <T> ResultApi<T> failed(IErrorCode errorCode,String message) {
+        return new ResultApi<T>(errorCode.getCode(), message, null);
     }
 
     /**
      * 失败返回结果
      * @param message 提示信息
      */
-    public static <T> CommonResult<T> failed(String message) {
-        return new CommonResult<T>(ResultCode.FAILED.getCode(), message, null);
+    public static <T> ResultApi<T> failed(String message) {
+        return new ResultApi<T>(ResultCode.FAILED.getCode(), message, null);
     }
 
     /**
      * 失败返回结果
      */
-    public static <T> CommonResult<T> failed() {
+    public static <T> ResultApi<T> failed() {
         return failed(ResultCode.FAILED);
     }
 
     /**
      * 参数验证失败返回结果
      */
-    public static <T> CommonResult<T> validateFailed() {
+    public static <T> ResultApi<T> validateFailed() {
         return failed(ResultCode.VALIDATE_FAILED);
     }
 
@@ -80,22 +80,22 @@ public class CommonResult<T> {
      * 参数验证失败返回结果
      * @param message 提示信息
      */
-    public static <T> CommonResult<T> validateFailed(String message) {
-        return new CommonResult<T>(ResultCode.VALIDATE_FAILED.getCode(), message, null);
+    public static <T> ResultApi<T> validateFailed(String message) {
+        return new ResultApi<T>(ResultCode.VALIDATE_FAILED.getCode(), message, null);
     }
 
     /**
      * 未登录返回结果
      */
-    public static <T> CommonResult<T> unauthorized(T data) {
-        return new CommonResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
+    public static <T> ResultApi<T> unauthorized(T data) {
+        return new ResultApi<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
     }
 
     /**
      * 未授权返回结果
      */
-    public static <T> CommonResult<T> forbidden(T data) {
-        return new CommonResult<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
+    public static <T> ResultApi<T> forbidden(T data) {
+        return new ResultApi<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
     }
 
     public long getCode() {

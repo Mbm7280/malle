@@ -1,4 +1,4 @@
-package com.echo.mall.modules.ums.dto;
+package com.echo.mall.modules.component;
 
 import lombok.Data;
 

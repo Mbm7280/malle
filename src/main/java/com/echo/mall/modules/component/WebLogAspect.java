@@ -1,9 +1,8 @@
-package com.echo.mall.modules.ums.component;
+package com.echo.mall.modules.component;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.URLUtil;
 import cn.hutool.json.JSONUtil;
-import com.echo.mall.modules.ums.dto.WebLog;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.JoinPoint;
