@@ -22,7 +22,7 @@ public interface PmsBrandService extends IService<PmsBrand> {
      * @Param
      * @return
      **/
-    Page<PmsBrand> queryPageBrand(Integer pageSize, Integer pageNum);
+    Page<PmsBrand> queryPageBrand(Integer pageNum,Integer pageSize);
 
 
 }

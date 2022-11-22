@@ -28,7 +28,7 @@ public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> i
      * @return com.baomidou.mybatisplus.extension.plugins.pagination.Page<com.echo.mall.modules.pms.model.PmsBrand>
      **/
     @Override
-    public Page<PmsBrand> queryPageBrand(Integer pageSize, Integer pageNum) {
+    public Page<PmsBrand> queryPageBrand( Integer pageNum,Integer pageSize) {
         Page<PmsBrand> page = new Page(pageNum,pageSize);
         QueryWrapper<PmsBrand> wrapper = new QueryWrapper<>();
         return page(page,wrapper);

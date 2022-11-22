@@ -53,9 +53,10 @@ public class PmsBrandController {
     @ApiOperation("分页获取所有的品牌")
     @GetMapping(value = "/queryPageBrand")
     @ResponseBody
-    public ResultApi<CommonPage<PmsBrand>> queryPageBrand(@RequestParam(value = "pageSize",defaultValue = "5") Integer pageSize,
-                                                          @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum) {
-        Page<PmsBrand> pageBrand = pmsAlbumService.queryPageBrand(pageNum, pageSize);
+    public ResultApi<CommonPage<PmsBrand>> queryPageBrand(
+            @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
+            @RequestParam(value = "pageSize",defaultValue = "5") Integer pageSize) {
+        Page<PmsBrand> pageBrand = pmsAlbumService.queryPageBrand(pageNum,pageSize);
         return ResultApi.success(CommonPage.restPage(pageBrand));
     }
 
