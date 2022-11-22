@@ -59,7 +59,6 @@ public class PmsAlbumController {
     public ResultApi<CommonPage<PmsAlbum>> queryPageAlbum(
             @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
             @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-        Page<PmsAlbum> page = new Page<>(pageNum,pageSize);
         Page<PmsAlbum> roleList = pmsAlbumService.queryPageAlbum(pageSize, pageNum);
         return ResultApi.success(CommonPage.restPage(roleList));
     }
