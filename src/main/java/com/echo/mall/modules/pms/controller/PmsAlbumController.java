@@ -7,7 +7,9 @@ import com.echo.mall.common.api.CommonPage;
 import com.echo.mall.common.api.ResultApi;
 import com.echo.mall.modules.pms.model.PmsAlbum;
 import com.echo.mall.modules.pms.service.PmsAlbumService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +23,8 @@ import java.util.List;
  * @author echo
  * @since 2022-11-21
  */
+@Api("PmsAlbumController")
+@Tag(name = "PmsAlbumController",description = "相册表管理")
 @RestController
 @RequestMapping("/pms/pmsAlbum")
 public class PmsAlbumController {
@@ -89,7 +93,6 @@ public class PmsAlbumController {
      **/
     @ApiOperation("新增一个相册")
     @PostMapping(value = "/insertAlbum")
-    @ResponseBody
     public ResultApi insertAlbum(@RequestBody PmsAlbum pmsAlbum) {
         return pmsAlbumService.insertAlbum(pmsAlbum) ? ResultApi.success(null):ResultApi.failed();
     }
@@ -104,7 +107,6 @@ public class PmsAlbumController {
      **/
     @ApiOperation("根据ID修改相册")
     @PutMapping(value = "/updateAlbumByID")
-    @ResponseBody
     public ResultApi updateAlbumByID(@RequestBody PmsAlbum pmsAlbum) {
         return pmsAlbumService.updateAlbumByID(pmsAlbum) ? ResultApi.success(null):ResultApi.failed();
     }
@@ -119,7 +121,6 @@ public class PmsAlbumController {
      **/
     @ApiOperation("根据ID删除相册")
     @DeleteMapping(value = "/delAlbumById")
-    @ResponseBody
     public ResultApi delAlbumById(@RequestParam Long id) {
         return pmsAlbumService.delAlbumById(id) ? ResultApi.success(null):ResultApi.failed();
     }

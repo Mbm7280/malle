@@ -7,7 +7,9 @@ import com.echo.mall.common.api.CommonPage;
 import com.echo.mall.common.api.ResultApi;
 import com.echo.mall.modules.pms.model.PmsBrand;
 import com.echo.mall.modules.pms.service.PmsBrandService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +23,8 @@ import java.util.List;
  * @author echo
  * @since 2022-11-21
  */
+@Api("PmsBrandController")
+@Tag(name = "PmsBrandController",description = "品牌表管理")
 @RestController
 @RequestMapping("/pms/pmsBrand")
 public class PmsBrandController {
@@ -77,7 +81,6 @@ public class PmsBrandController {
 
     @ApiOperation("创建一个品牌")
     @PostMapping(value = "insertBrand")
-    @ResponseBody
     public ResultApi insertBrand(@RequestBody PmsBrand brand){
         return pmsAlbumService.save(brand) ? ResultApi.success(null) : ResultApi.failed();
     }
@@ -91,7 +94,6 @@ public class PmsBrandController {
      **/
     @ApiOperation("根据ID修改品牌")
     @PutMapping(value = "updateBrandByID")
-    @ResponseBody
     public ResultApi updateBrandByID(@RequestBody PmsBrand pmsBrand) {
         return pmsAlbumService.updateById(pmsBrand) ? ResultApi.success(null) : ResultApi.failed();
     }
@@ -105,7 +107,6 @@ public class PmsBrandController {
      **/
     @ApiOperation("根据ID删除品牌")
     @PutMapping(value = "delBrandByID")
-    @ResponseBody
     public ResultApi delBrandByID(@RequestParam(value = "id") Long id) {
         return pmsAlbumService.removeById(id) ? ResultApi.success(null) : ResultApi.failed();
     }
