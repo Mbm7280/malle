@@ -47,6 +47,7 @@ public class PmsAlbumController {
         if(CollectionUtil.isEmpty(roleList)){
             return ResultApi.failed();
         }
+        System.out.println("This is a test");
         return ResultApi.success(roleList);
     }
 
