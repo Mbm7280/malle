@@ -45,7 +45,7 @@ public class PmsCommentController {
      * @return com.echo.mall.common.api.ResultApi
      **/
     @ApiOperation("获取所有的评价")
-    @GetMapping(value = "/quertAllComment")
+    @GetMapping(value = "/queryAllComment")
     @ResponseBody
     public ResultApi quertAllComment () {
         List<PmsComment> pmsCommentList = pmsCommentService.list();
