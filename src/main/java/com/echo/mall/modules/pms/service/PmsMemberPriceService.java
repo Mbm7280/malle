@@ -17,7 +17,7 @@ public interface PmsMemberPriceService extends IService<PmsMemberPrice> {
     /*
      * @Author Echo
      * @Description 分页获取商品会员价格
-     * @Date 21:44 2022/11/29
+     * @Date 21:53 2022/11/29
      * @Param 
      * @return 
      **/

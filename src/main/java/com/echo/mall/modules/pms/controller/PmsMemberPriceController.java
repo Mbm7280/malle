@@ -73,7 +73,7 @@ public class PmsMemberPriceController {
     @ResponseBody
     public ResultApi<PmsMemberPrice> queryMemberPriceByID (@RequestParam Long id) {
         PmsMemberPrice pmsMemberPrice = pmsMemberPriceService.getById(id);
-        return ResultApi.success(pmsMemberPrice);
+        return ResultApi.success( pmsMemberPrice);
     }
 
 
