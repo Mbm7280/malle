@@ -1,5 +1,6 @@
 package com.echo.mall.modules.pms.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.echo.mall.modules.pms.model.PmsProductAttribute;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -12,5 +13,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2022-11-21
  */
 public interface PmsProductAttributeService extends IService<PmsProductAttribute> {
+    
+    
+    /*
+     * @Author Echo
+     * @Description 分页获取产品属性
+     * @Date 22:32 2022/12/1
+     * @Param 
+     * @return 
+     **/
+    Page<PmsProductAttribute> queryPageProductAttribute(Integer pageNum,Integer pageSize);
+    
 
 }
