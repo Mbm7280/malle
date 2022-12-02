@@ -1,6 +1,8 @@
 package com.echo.mall.modules.pms.controller;
 
 
+import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @author echo
  * @since 2022-11-21
  */
+@Api("PmsProductCategoryAttributeRelationController")
+@Tag(name = "PmsProductCategoryAttributeRelationController",description = "产品属性参数管理")
 @RestController
 @RequestMapping("/pms/pmsProductCategoryAttributeRelation")
 public class PmsProductCategoryAttributeRelationController {
