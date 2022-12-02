@@ -18,7 +18,7 @@ public interface PmsProductAttributeService extends IService<PmsProductAttribute
     /*
      * @Author Echo
      * @Description 分页获取产品属性
-     * @Date 22:32 2022/12/1
+     * @Date 00:08 2022/12/2
      * @Param 
      * @return 
      **/
