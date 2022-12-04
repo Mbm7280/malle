@@ -28,7 +28,7 @@ public class PmsMemberPriceServiceImpl extends ServiceImpl<PmsMemberPriceMapper,
      **/
     @Override
     public Page<PmsMemberPrice> queryPageMemberPrice(Integer pageNum, Integer pageSize) {
-        Page<PmsMemberPrice> page = new Page<>();
+        Page<PmsMemberPrice> page = new Page<>(pageNum,pageSize);
         QueryWrapper<PmsMemberPrice> queryWrapper = new QueryWrapper();
         return page(page,queryWrapper);
     }

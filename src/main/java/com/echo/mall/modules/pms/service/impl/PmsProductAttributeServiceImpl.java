@@ -28,7 +28,7 @@ public class PmsProductAttributeServiceImpl extends ServiceImpl<PmsProductAttrib
      **/
     @Override
     public Page<PmsProductAttribute> queryPageProductAttribute(Integer pageNum, Integer pageSize) {
-        Page<PmsProductAttribute> page = new Page<>();
+        Page<PmsProductAttribute> page = new Page<>(pageNum,pageSize);
         QueryWrapper<PmsProductAttribute> queryWrapper = new QueryWrapper<>();
         return page(page,queryWrapper);
     }
