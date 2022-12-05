@@ -8,7 +8,9 @@ import com.echo.mall.common.api.CommonPage;
 import com.echo.mall.common.api.ResultApi;
 import com.echo.mall.modules.pms.model.PmsProduct;
 import com.echo.mall.modules.pms.service.PmsProductService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +24,9 @@ import java.util.List;
  * @author echo
  * @since 2022-11-21
  */
+@Api("PmsProductController")
+
+@Tag(name = "PmsProductController",description = "商品信息管理")
 @RestController
 @RequestMapping("/pms/pmsProduct")
 public class PmsProductController {
@@ -37,10 +42,9 @@ public class PmsProductController {
      * @return com.echo.mall.common.api.ResultApi<java.util.List<com.echo.mall.modules.pms.model.PmsProduct>>
      **/
     @ApiOperation("获取所有的产品")
-    @GetMapping(value = "/queryAllProductCategory")
+    @GetMapping(value = "/queryAllProduct")
     @ResponseBody
     public ResultApi<List<PmsProduct>> queryAllProductCategory(){
-
         List<PmsProduct> pmsProductList = pmsProductService.list();
         return CollectionUtil.isEmpty(pmsProductList) ? ResultApi.failed() : ResultApi.success(pmsProductList);
     }
