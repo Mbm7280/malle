@@ -25,7 +25,6 @@ import java.util.List;
  * @since 2022-11-21
  */
 @Api("PmsProductController")
-
 @Tag(name = "PmsProductController",description = "商品信息管理")
 @RestController
 @RequestMapping("/pms/pmsProduct")
